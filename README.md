@@ -25,9 +25,9 @@ NeoBundle 'shikato/keysender.vim'
 ### Example
 
 #### Basic
-If you want to send Chrome [abc]
+If you want to send Chrome [a]
 ```
-:Keysender abc
+:Keysender a
 ```
 #### Plural & Change target application
 If you want to send Safari [abc], [d], [ef] 
