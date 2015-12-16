@@ -32,5 +32,7 @@ If you want to send Chrome [m + ctrl], [v + command + shift], [abcde], [def + ct
 :Keysender 2,c,a
 ```
 
+[Introductory article]()
+
 ## License
 MIT
