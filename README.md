@@ -18,12 +18,14 @@ NeoBundle 'shikato/keysender.vim'
 ## Usage
 | Command | Action |
 |:-----------|------------:|
-| :Keysender |something|
+| :Keysender |The command sends an application key events|
 | :KeysenderSetTargetAppName something |The command sets Target Application Name. (Default: Chrome)|
 | :KeysenderSetVimAppName something |The command sets Vim Application Name. (Default: MacVim)|
 
 ### :Keysender
+ex1) If you want to send Chrome [m + ctrl + aption] & [v + command + shift]
 ```
+:Keysender m,c,a v,d,s
 ```
 
 ## License
