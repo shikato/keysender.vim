@@ -25,7 +25,7 @@ NeoBundle 'shikato/keysender.vim'
 ### :Keysender
 If you want to send Chrome [m + ctrl], [v + command + shift], [abcde], [def + ctrl + command + shift + option]
 ```
-:Keysender m,c,a v,d,s abcde def,c,d,s,a
+:Keysender m,c v,d,s abcde def,c,d,s,a
 ```
 :Keysender can send [key code](http://hyslog.com/blog/2012/06/25/569) of Mac.
 ```
