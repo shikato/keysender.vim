@@ -53,6 +53,10 @@ If you want to send Chrome [a + ctrl], [bc + command + option], [e + shift]
 ```
 :Keysender 2,c,a
 ```
+You can know the key code by this command.
+```
+grep 'kVK_.*=' /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Events.h
+```
 
 [Introductory article]()
 
