@@ -22,7 +22,7 @@ NeoBundle 'shikato/keysender.vim'
 | :KeysenderSetTargetAppName something |The command sets Target Application Name. (Default: Chrome)|
 | :KeysenderSetVimAppName something |The command sets Vim Application Name. (Default: MacVim)|
 
-### Sample
+### Example
 
 #### Basic
 If you want to send Chrome [abc]
