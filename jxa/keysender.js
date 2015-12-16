@@ -76,7 +76,7 @@ var getUsingKey = function (usingKey) {
 };
 
 
-var sendKey = function (keyObjects, targetAppName, vimAppName) {
+var sendKey2App = function (keyObjects, targetAppName, vimAppName) {
   var targetApp = null; 
   var vimApp = null; 
   try { 
@@ -157,6 +157,6 @@ function run(argv){
   var keys = generateKeyObjects(keysFromVim); 
   if (keys === "") return;
 
-  sendKey(keys, targetAppName, vimAppName);
+  sendKey2App(keys, targetAppName, vimAppName);
 }
 
