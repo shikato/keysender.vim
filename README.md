@@ -41,6 +41,13 @@ If you want to send Chrome [a + ctrl], [bc + command + option], [e + shift]
 :Keysender a,c bc,d,a e,s
 ```
 
+| Key | Description |
+|:-----------|------------:|
+| c|ctrl |
+| d |command |
+| a |optino |
+| s |shift |
+
 #### Key code
 :Keysender can send [key code](http://hyslog.com/blog/2012/06/25/569) of Mac.
 ```
