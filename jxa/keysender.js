@@ -1,5 +1,5 @@
 var generateKeyObjects = function (keysFromVimArray) {
-  var retKeys = [];
+  var keyObjects = [];
 
   for (var i = 0; i < keysFromVimArray.length; i++) { 
 
@@ -27,10 +27,10 @@ var generateKeyObjects = function (keysFromVimArray) {
       } 
     }
 
-    retKeys.push(keyObject); 
+    keyObjects.push(keyObject); 
   }
 
-  return retKeys;
+  return keyObjects;
 }; 
 
 var isKeyCode = function (keyCode) {
