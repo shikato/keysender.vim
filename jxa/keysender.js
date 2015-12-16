@@ -1,7 +1,7 @@
-var generateKeyObjects = function (keysFromVimArray) {
+var generateKeyObjects = function (keysFromVim) {
   var keyObjects = [];
 
-  for (var i = 0; i < keysFromVimArray.length; i++) { 
+  for (var i = 0; i < keysFromVim.length; i++) { 
 
     var keyObject = {};
     keyObject.key = ""; 
@@ -10,18 +10,18 @@ var generateKeyObjects = function (keysFromVimArray) {
     keyObject.usingObject = {};
     keyObject.usingObject.using = []; 
 
-    var splitKeyArray = keysFromVimArray[i].split(","); 
-    if (!isValidKey(splitKeyArray)) return "";
+    var splitKeys = keysFromVim[i].split(","); 
+    if (!isValidKey(splitKeys)) return "";
 
-    if (isKeyCode(splitKeyArray[0])) { 
+    if (isKeyCode(splitKeys[0])) { 
       keyObject.isKeyCode = true;
-      keyObject.keyCode.push(Number(splitKeyArray[0]));
+      keyObject.keyCode.push(Number(splitKeys[0]));
     } else { 
-      keyObject.key = splitKeyArray[0];
+      keyObject.key = splitKeys[0];
     }
 
-    for (var k = 1; k < splitKeyArray.length; k++) { 
-      var usingKey = getUsingKey(splitKeyArray[k]); 
+    for (var k = 1; k < splitKeys.length; k++) { 
+      var usingKey = getUsingKey(splitKeys[k]); 
       if (usingKey !== "") { 
         keyObject.usingObject.using.push(usingKey);   
       } 
@@ -39,21 +39,21 @@ var isKeyCode = function (keyCode) {
   return false; 
 }
 
-var isValidKey = function (splitKeyArray) {
-  if (splitKeyArray.length > 5) return false;
+var isValidKey = function (splitKeys) {
+  if (splitKeys.length > 5) return false;
   
   var usingKeyRe = /c|d|a|s/;
 
-  for (var i = 0; i < splitKeyArray.length; i++) {
+  for (var i = 0; i < splitKeys.length; i++) {
     if (i === 0) { 
       // とりあえず空以外は許容とする
-      if (splitKeyArray[i] === null || splitKeyArray[i] === "") {
-        console.log("invalid key:" + splitKeyArray[i]);
+      if (splitKeys[i] === null || splitKeys[i] === "") {
+        console.log("invalid key:" + splitKeys[i]);
         return false;
       } 
     } else {
-      if (!splitKeyArray[i].match(usingKeyRe)) { 
-        console.log("invalid key:" + splitKeyArray[i]);
+      if (!splitKeys[i].match(usingKeyRe)) { 
+        console.log("invalid key:" + splitKeys[i]);
         return false;
       }
     } 
@@ -114,6 +114,8 @@ var getKeyCount = function (keyObjects) {
   keyObjects.forEach(function (keyObject) {
     if (!keyObject.isKeyCode) { 
       count += keyObject.key.length;
+    } else { 
+      count += 1;
     }
   }); 
 
@@ -140,7 +142,7 @@ function run(argv){
 
   var targetAppName = null;
   var vimAppName = null;
-  var keyArrayFromVim = [];
+  var keysFromVim = [];
 
   for (var i = 0; i < argv.length; i++) { 
     if (i === 0) {
@@ -148,11 +150,11 @@ function run(argv){
     } else if (i === 1) { 
       vimAppName = argv[i];
     } else {
-      keyArrayFromVim.push(argv[i]);
+      keysFromVim.push(argv[i]);
     }
   }
 
-  var keys = generateKeyObjects(keyArrayFromVim); 
+  var keys = generateKeyObjects(keysFromVim); 
   if (keys === "") return;
 
   sendKey(keys, targetAppName, vimAppName);
