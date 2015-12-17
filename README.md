@@ -1,5 +1,7 @@
 # keysender.vim
-DEMO
+![demo1](https://qiita-image-store.s3.amazonaws.com/0/47437/2ab5c30c-ec0a-61a8-7174-24a9bd983b8d.gif) 
+
+![demo2](https://qiita-image-store.s3.amazonaws.com/0/47437/786ff3ab-5b09-9169-2653-7619043a4196.gif)
 
 Keysender is a plugin to send an application key events.
 
@@ -45,7 +47,7 @@ If you want to send Chrome [a + ctrl], [bc + command + option], [e + shift]
 |:-----------|------------:|
 | c|ctrl |
 | d |command |
-| a |optino |
+| a |option |
 | s |shift |
 
 #### Key code
