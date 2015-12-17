@@ -20,8 +20,8 @@ NeoBundle 'shikato/keysender.vim'
 ## Usage
 | Command | Action |
 |:-----------|------------:|
-| :KeysenderKeystroke |The command sends an application keystroke. |
-| :KeysenderKeyCode |The command sends an application key code.|
+| :KeysenderKeystroke ...something|The command sends an application keystroke. |
+| :KeysenderKeyCode ...something|The command sends an application key code.|
 | :KeysenderSetTargetAppName something |The command sets Target Application Name. (Default: Chrome)|
 | :KeysenderSetVimAppName something |The command sets Vim Application Name. (Default: MacVim)|
 
