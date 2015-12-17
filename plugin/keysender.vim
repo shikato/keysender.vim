@@ -12,8 +12,8 @@ set cpo&vim
 
 command! -nargs=* KeysenderKeystroke call keysender#SendKey2AppWithKeystroke(<f-args>) 
 command! -nargs=* KeysenderKeyCode call keysender#SendKey2AppWithKeyCode(<f-args>) 
-command! -nargs=1 KeysenderSetTargetApp call keysender#SetTargetApp(<f-args>) 
-command! -nargs=1 KeysenderSetVimApp call keysender#SetVimApp(<f-args>) 
+command! -nargs=1 KeysenderSetTargetAppName call keysender#SetTargetAppName(<f-args>) 
+command! -nargs=1 KeysenderSetVimAppName call keysender#SetVimAppName(<f-args>) 
 
 
 let &cpo = s:save_cpo
