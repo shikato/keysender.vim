@@ -1,4 +1,4 @@
-var TYPE_KEY_STROKE = "1"; 
+var TYPE_KEYSTROKE = "1"; 
 var TYPE_KEY_CODE = "2"; 
 
 var currentType = -1;
