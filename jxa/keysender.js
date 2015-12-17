@@ -1,3 +1,8 @@
+var TYPE_KEYSTROKE = "1"; 
+var TYPE_KEY_CODE = "2"; 
+
+var currentType = -1;
+
 var generateKeyObjects = function (keysFromVim) {
   var keyObjects = [];
 
@@ -34,14 +39,17 @@ var generateKeyObjects = function (keysFromVim) {
 }; 
 
 var isKeyCode = function (keyCode) {
-  var keyCodeRe = /^\d{1,3}$/;
-  if (keyCode.match(keyCodeRe)) return true;
-  return false; 
+  return currentType === TYPE_KEY_CODE; 
+  //  var keyCodeRe = /^\d{1,3}$/;
+  //  return keyCode.match(keyCodeRe); 
 }
 
 var isValidKey = function (splitKeys) {
-  if (splitKeys.length > 5) return false;
-  
+  if (splitKeys.length > 6) {
+    console.log("keys parse error."); 
+    return false;
+  }
+
   var usingKeyRe = /c|d|a|s/;
 
   for (var i = 0; i < splitKeys.length; i++) {
@@ -90,7 +98,8 @@ var sendKey2App = function (keyObjects, targetAppName, vimAppName) {
   var systemEvent = Application("System Events");
   targetApp.activate();
 
-  var delayTime = 0.3;
+  // TODO: とりあえず0.5を指定
+  var delayTime = 0.5;
 //  var keyCount = getKeyCount(keyObjects);
 //  if (keyCount > 5) {
 //    delayTime = 0.1 * keyCount;
@@ -131,12 +140,13 @@ var doKeyCode = function (systemEvent, keyObject) {
 }; 
 
 
-// argv[0]はtargetAppName
-// argv[1]はvimAppName
+// argv[0]はtype
+// argv[1はtargetAppName
+// argv[2]はvimAppName
 // それ移行はkey
 function run(argv){ 
-  if (argv.length < 3) {
-    console.log("Arguments are necessary more than 3.");
+  if (argv.length < 4) {
+    console.log("Arguments are necessary more than 4.");
     return; 
   }
 
@@ -145,9 +155,11 @@ function run(argv){
   var keysFromVim = [];
 
   for (var i = 0; i < argv.length; i++) { 
-    if (i === 0) {
-      targetAppName = argv[i];
+    if (i === 0) { 
+      currentType = argv[i];
     } else if (i === 1) { 
+      targetAppName = argv[i];
+    } else if (i === 2) { 
       vimAppName = argv[i];
     } else {
       keysFromVim.push(argv[i]);
