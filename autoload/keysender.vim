@@ -24,11 +24,11 @@ function! keysender#SendKey2AppWithKeyCode(...)
   call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/keysender.js " . s:TYPE_KEY_CODE . " " . s:targetAppName ." " . s:vimAppName ." " . argv . "> /dev/null 2>&1")  
 endfunction 
 
-function! keysender#SetTargetApp(appName) 
-  let s:targetAppName = a:appName 
+function! keysender#SetTargetAppName(appName) 
+  let s:targetAppName = a:appName
 endfunction 
 
-function! keysender#SetVimApp(appName) 
+function! keysender#SetVimAppName(appName) 
   let s:vimAppName = a:appName
 endfunction 
 
