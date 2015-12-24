@@ -61,7 +61,8 @@ You can know the key code by this command.
 grep 'kVK_.*=' /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Events.h
 ```
 
-[Introductory article](http://qiita.com/shikato/items/2e8af1330e3ac8949279)
+## Documents
+[Qiita](http://qiita.com/shikato/items/2e8af1330e3ac8949279)
 
 ## License
 MIT
