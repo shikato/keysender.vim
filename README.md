@@ -10,7 +10,7 @@ This plugin is available only in Mac.
 The reason why is because this plugin uses JXA.
 ```
 
-## Install
+## Download
 #### ex. [NeoBundle](https://github.com/Shougo/neobundle.vim)
 .vimrc
 ```
@@ -22,8 +22,8 @@ NeoBundle 'shikato/keysender.vim'
 |:-----------|------------:|
 | :KeysenderKeystroke ...something|The command sends an application keystroke. |
 | :KeysenderKeyCode ...something|The command sends an application key code.|
-| :KeysenderSetTargetAppName something |The command sets Target Application Name. (Default: Chrome)|
-| :KeysenderSetVimAppName something |The command sets Vim Application Name. (Default: MacVim)|
+| :KeysenderSetTargetAppName something |The command sets target application name. (Default: Chrome)|
+| :KeysenderSetVimAppName something |The command sets Vim application name. (Default: MacVim)|
 
 ### Example
 
@@ -46,7 +46,7 @@ If you want to send Chrome [a + ctrl], [bc + command + option], [e + shift]
 
 | Key | Description |
 |:-----------|------------:|
-| c|ctrl |
+| c |ctrl |
 | d |command |
 | a |option |
 | s |shift |
@@ -61,7 +61,7 @@ You can know the key code by this command.
 grep 'kVK_.*=' /System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Events.h
 ```
 
-## Documents
+## Other documents
 [Qiita](http://qiita.com/shikato/items/2e8af1330e3ac8949279)
 
 ## License
