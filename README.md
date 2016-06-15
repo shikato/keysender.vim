@@ -6,8 +6,8 @@ Keysender is a plugin to send an application key events.
 ![demo2](https://qiita-image-store.s3.amazonaws.com/0/47437/786ff3ab-5b09-9169-2653-7619043a4196.gif)
 
 ``` 
-This plugin is available only in Mac.
-The reason why is because this plugin uses JXA.
+You can use this software only in Mac.
+Because this software uses JXA.
 ```
 
 ## Download
