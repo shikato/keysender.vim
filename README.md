@@ -1,5 +1,5 @@
 # keysender.vim
-Keysender is a plugin to send an application key events.
+Keysender is Vim plugin to send an application key events.
 
 ![demo1](https://qiita-image-store.s3.amazonaws.com/0/47437/2ab5c30c-ec0a-61a8-7174-24a9bd983b8d.gif) 
 
